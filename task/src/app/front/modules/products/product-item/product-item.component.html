@@ -1,0 +1,100 @@
+<ng-container *ngFor="let product of products;let i = index">
+    <div class="row" *ngIf="i % 4 == 0">
+        <div class="col-md-3" *ngIf="i + 1 < products.length">
+             <div class="product">
+                <img src="{{products[i+1]['image']}}" alt="" />
+                <h3>
+                    {{products[i+1]['name']}} 
+                </h3>
+                <span>
+                    {{truncateText(products[i+1]['description'])}} 
+                </span>
+                <div class="rating">
+                    <ng-container *ngFor="let item of [1,2,3,4,5]">
+                        <svg *ngIf="item > products[i+1]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.87325 4.74659L13.6666 5.15992L10.0333 8.31325L11.1199 12.9999L6.99992 10.5133L2.87992 12.9999L3.97325 8.31325L0.333252 5.15992L5.12659 4.75325L6.99992 0.333252L8.87325 4.74659ZM4.49325 10.7799L6.99992 9.26659L9.51325 10.7866L8.84659 7.93325L11.0599 6.01325L8.13992 5.75992L6.99992 3.06659L5.86659 5.75325L2.94659 6.00659L5.15992 7.92659L4.49325 10.7799Z" fill="#B1B5C9"/>
+                        </svg>
+                        <svg *ngIf="item <= products[i+1]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.99992 10.5133L11.1199 12.9999L10.0266 8.31325L13.6666 5.15992L8.87325 4.75325L6.99992 0.333252L5.12659 4.75325L0.333252 5.15992L3.97325 8.31325L2.87992 12.9999L6.99992 10.5133Z" fill="#F9A52B"/>
+                        </svg>
+                    </ng-container>
+                </div> 
+                <button type="button" class="btn btn-primary">
+                    Show details
+                </button>
+            </div>
+        </div>  
+        <div class="col-md-3" *ngIf="i + 2 < products.length">
+             <div class="product">
+                <img src="{{products[i+2]['image']}}" alt="" />
+                <h3>
+                    {{products[i+2]['name']}} 
+                </h3>
+                <span>
+                    {{truncateText(products[i+2]['description'])}} 
+                </span>
+                <div class="rating">
+                    <ng-container *ngFor="let item of [1,2,3,4,5]">
+                        <svg *ngIf="item > products[i+2]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.87325 4.74659L13.6666 5.15992L10.0333 8.31325L11.1199 12.9999L6.99992 10.5133L2.87992 12.9999L3.97325 8.31325L0.333252 5.15992L5.12659 4.75325L6.99992 0.333252L8.87325 4.74659ZM4.49325 10.7799L6.99992 9.26659L9.51325 10.7866L8.84659 7.93325L11.0599 6.01325L8.13992 5.75992L6.99992 3.06659L5.86659 5.75325L2.94659 6.00659L5.15992 7.92659L4.49325 10.7799Z" fill="#B1B5C9"/>
+                        </svg>
+                        <svg *ngIf="item <= products[i+2]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.99992 10.5133L11.1199 12.9999L10.0266 8.31325L13.6666 5.15992L8.87325 4.75325L6.99992 0.333252L5.12659 4.75325L0.333252 5.15992L3.97325 8.31325L2.87992 12.9999L6.99992 10.5133Z" fill="#F9A52B"/>
+                        </svg>
+                    </ng-container>
+                </div> 
+                <button type="button" class="btn btn-primary">
+                    Show details
+                </button>
+            </div>
+        </div> 
+        <div class="col-md-3" *ngIf="i + 3 < products.length">
+             <div class="product">
+                <img src="{{products[i+3]['image']}}" alt="" />
+                <h3>
+                    {{products[i+3]['name']}} 
+                </h3>
+                <span>
+                    {{truncateText(products[i+3]['description'])}} 
+                </span>
+                <div class="rating">
+                    <ng-container *ngFor="let item of [1,2,3,4,5]">
+                        <svg *ngIf="item > products[i+3]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.87325 4.74659L13.6666 5.15992L10.0333 8.31325L11.1199 12.9999L6.99992 10.5133L2.87992 12.9999L3.97325 8.31325L0.333252 5.15992L5.12659 4.75325L6.99992 0.333252L8.87325 4.74659ZM4.49325 10.7799L6.99992 9.26659L9.51325 10.7866L8.84659 7.93325L11.0599 6.01325L8.13992 5.75992L6.99992 3.06659L5.86659 5.75325L2.94659 6.00659L5.15992 7.92659L4.49325 10.7799Z" fill="#B1B5C9"/>
+                        </svg>
+                        <svg *ngIf="item <= products[i+3]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.99992 10.5133L11.1199 12.9999L10.0266 8.31325L13.6666 5.15992L8.87325 4.75325L6.99992 0.333252L5.12659 4.75325L0.333252 5.15992L3.97325 8.31325L2.87992 12.9999L6.99992 10.5133Z" fill="#F9A52B"/>
+                        </svg>
+                    </ng-container>
+                </div> 
+                <button type="button" class="btn btn-primary">
+                    Show details
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3" *ngIf="i + 4 <= products.length">
+             <div class="product">
+                <img src="{{products[i+4]['image']}}" alt="" />
+                <h3>
+                    {{products[i+4]['name']}} 
+                </h3>
+                <span>
+                    {{truncateText(products[i+4]['description'])}} 
+                </span>
+                <div class="rating">
+                    <ng-container *ngFor="let item of [1,2,3,4,5]">
+                        <svg *ngIf="item > products[i+4]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.87325 4.74659L13.6666 5.15992L10.0333 8.31325L11.1199 12.9999L6.99992 10.5133L2.87992 12.9999L3.97325 8.31325L0.333252 5.15992L5.12659 4.75325L6.99992 0.333252L8.87325 4.74659ZM4.49325 10.7799L6.99992 9.26659L9.51325 10.7866L8.84659 7.93325L11.0599 6.01325L8.13992 5.75992L6.99992 3.06659L5.86659 5.75325L2.94659 6.00659L5.15992 7.92659L4.49325 10.7799Z" fill="#B1B5C9"/>
+                        </svg>
+                        <svg *ngIf="item <= products[i+4]['rating']" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.99992 10.5133L11.1199 12.9999L10.0266 8.31325L13.6666 5.15992L8.87325 4.75325L6.99992 0.333252L5.12659 4.75325L0.333252 5.15992L3.97325 8.31325L2.87992 12.9999L6.99992 10.5133Z" fill="#F9A52B"/>
+                        </svg>
+                    </ng-container>
+                </div> 
+                <button type="button" class="btn btn-primary">
+                    Show details
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-container>    
