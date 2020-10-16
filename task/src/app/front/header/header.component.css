@@ -2,7 +2,28 @@
     background:#fff;
     height:144px;
     font-size:14px;
-    height:auto;
+    min-height:144px;
+}
+
+.navbar-top .logo-top {
+    position: absolute;
+    top: 37%;
+    left: 1%;
+}    
+
+.navbar-top .search-form {
+    position: absolute;
+    top: 34%;
+    left: 14%;
+}
+
+.navbar-top .search-form .magnifier {
+    position: absolute;
+    left: 90.56%;
+    right: 4.98%;
+    top: 31.25%;
+    bottom: 32.31%;
+    cursor:pointer
 }
 
 .navbar-top .search-top { 
@@ -27,20 +48,22 @@
     color: #1A1B1D;
 }
 
-.navbar-top .search-form { 
-    position:relative;
+.active-container {
+    position: absolute;
+    left: 51%;
+    top: 44%;
 }
 
-.navbar-top .search-form .magnifier {
+.promo-container {
     position: absolute;
-    left: 90.56%;
-    right: 4.98%;
-    top: 31.25%;
-    bottom: 32.31%;
-    cursor:pointer
+    left: 57%;
+    top: 44%;
 }
 
 .navbar-top .btn-primary {
+    position: absolute;
+    right: 1%;
+    top: 37%;
     height:38px;
     width:88px;
     background: #FFFFFF;
@@ -51,6 +74,75 @@
     color:#4460F7;
 }
 
+@media screen and (max-width: 1200px) {
+    .active-container {
+        left: 74%;
+    }
+
+    .promo-container {
+        left: 82%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-top {
+        min-height: 180px;
+    }
+    .navbar-top .logo-top {
+        top:10%;
+    }
+    .navbar-top .btn-primary {
+        top:10%;
+    }   
+    .navbar-top .search-form {
+        left:1%;
+    }
+    .active-container {
+        left: 1%;
+        top: 78%;
+    }
+    .promo-container {
+        left: 10%;
+        top: 78%;
+    }
+}    
+
+@media screen and (max-width: 768px) {
+    .active-container {
+        left: 1%;
+        top: 78%;
+    }
+    .promo-container {
+        left: 14%;
+        top: 78%;
+    }
+}    
+
+@media screen and (max-width: 600px) {
+    
+    .navbar-top .search-form {
+        width:99%;
+    }    
+    
+    .navbar-top .search-form .search-top {
+        width:100%;
+    }
+    
+}    
+
+@media screen and (max-width: 500px) {
+    .promo-container {
+        left: 17%;
+        top: 78%;
+    }
+}   
+
+@media screen and (max-width: 400px) {
+    .promo-container {
+        left: 22%;
+        top: 78%;
+    }
+}    
 
 
 
