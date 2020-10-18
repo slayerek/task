@@ -15,23 +15,4 @@ export class ProductItemComponent implements OnInit {
     ngOnInit() {
     }
 
-    private truncateText(text) {
-
-        const arr = text.split(' ');
-        let newDesc;
-
-        newDesc = arr.reduce((total, currentValue, currentIndex, arr) => {
-
-            if (total.length - 1 < 20) {
-                total += ' ' + currentValue;
-            }
-
-            return total;
-
-        });
-
-        return newDesc + '...';
-
-    }
-
 }

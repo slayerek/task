@@ -48,16 +48,63 @@
     color: #1A1B1D;
 }
 
+
+
 .active-container {
     position: absolute;
     left: 51%;
     top: 44%;
+
 }
 
 .promo-container {
     position: absolute;
-    left: 57%;
+    left: 58%;
     top: 44%;
+
+}
+
+label {
+    position: relative;
+    padding-left: 9px;
+    padding-top: 2px;
+}
+
+input[type="checkbox"]{
+    opacity:0;
+}
+
+span.checkmark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #E0E2EA;
+}
+
+input:checked ~ .checkmark {
+    background-color: #4460F7;
+}
+
+input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .navbar-top .btn-primary {
@@ -76,11 +123,11 @@
 
 @media screen and (max-width: 1200px) {
     .active-container {
-        left: 74%;
+        left: 73%;
     }
 
     .promo-container {
-        left: 82%;
+        left: 81%;
     }
 }
 
@@ -102,7 +149,7 @@
         top: 78%;
     }
     .promo-container {
-        left: 10%;
+        left: 12%;
         top: 78%;
     }
 }    
@@ -113,33 +160,33 @@
         top: 78%;
     }
     .promo-container {
-        left: 14%;
+        left: 17%;
         top: 78%;
     }
 }    
 
 @media screen and (max-width: 600px) {
-    
+
     .navbar-top .search-form {
         width:99%;
     }    
-    
+
     .navbar-top .search-form .search-top {
         width:100%;
     }
-    
+
 }    
 
 @media screen and (max-width: 500px) {
     .promo-container {
-        left: 17%;
+        left: 20%;
         top: 78%;
     }
 }   
 
 @media screen and (max-width: 400px) {
     .promo-container {
-        left: 22%;
+        left: 25%;
         top: 78%;
     }
 }    
