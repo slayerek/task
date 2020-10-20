@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Product} from '../models/product.model';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable,BehaviorSubject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Router} from "@angular/router";
 
@@ -10,7 +10,8 @@ import {Router} from "@angular/router";
 })
 export class ProductService {
 
-    private apiUrl = 'https://join-tsh-api-staging.herokuapp.com/product'
+    private apiUrl = 'https://join-tsh-api-staging.herokuapp.com/product';
+    public productsData = new BehaviorSubject([]);
 
     constructor(private http: HttpClient, private router: Router) {}
 

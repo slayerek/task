@@ -1,0 +1,5 @@
+.pagination { margin: 60px 0 0 0; }
+.pagination li { font-family: 'nunitoregular';font-size:14px; }
+.page-link { background-color:#F2F2F2;border:0;color:#1A1B1D; }
+.page-item.active .page-link { background-color:#F2F2F2;border:0;color:#4460F7; }
+.page-item.disabled .page-link { background-color:#F2F2F2;border:0;color:#9194A5; } 

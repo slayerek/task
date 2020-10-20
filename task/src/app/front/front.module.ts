@@ -11,7 +11,7 @@ import {ContentComponent} from './content/content.component';
     declarations: [
         FrontComponent,
         HeaderComponent,
-        ContentComponent,
+        ContentComponent
     ],
     imports: [
         CommonModule,

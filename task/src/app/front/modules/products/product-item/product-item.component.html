@@ -1,19 +1,19 @@
 <ng-container *ngFor="let product of products;let i = index">
     <div class="row" *ngIf="i % 4 == 0">
-        <div class="col-md-3" *ngIf="i + 1 < products.length">
-             <app-product-col [products]="products" [number]="i+1" >
+        <div class="col-md-3" *ngIf="i < products.length">
+             <app-product-col [products]="products" [number]="i" >
             </app-product-col>
         </div>  
-        <div class="col-md-3" *ngIf="i + 2 < products.length">
-             <app-product-col [products]="products" [number]="i+2" >
+        <div class="col-md-3" *ngIf="i + 1 < products.length">
+             <app-product-col [products]="products" [number]="i+1" >
             </app-product-col>   
         </div> 
-        <div class="col-md-3" *ngIf="i + 3 < products.length">
-             <app-product-col [products]="products" [number]="i+3" >
+        <div class="col-md-3" *ngIf="i + 2 < products.length">
+             <app-product-col [products]="products" [number]="i+2" >
             </app-product-col>
         </div>
-        <div class="col-md-3" *ngIf="i + 4 < products.length">
-             <app-product-col [products]="products" [number]="i+4" >
+        <div class="col-md-3" *ngIf="i + 3 < products.length">
+             <app-product-col [products]="products" [number]="i+3" >
             </app-product-col>
         </div> 
     </div>
