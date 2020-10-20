@@ -15,7 +15,7 @@ export class ProductService {
 
     constructor(private http: HttpClient, private router: Router) {}
 
-    public getProducts(): Observable<Product> {
+    public getProducts(): Observable<Product[]> {
 
         return this.http.get<Product[]>(this.apiUrl).pipe(
             map(
