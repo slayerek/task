@@ -1,38 +1,43 @@
 <nav aria-label="...">
     <ul class="pagination justify-content-center">
-        <li *ngFor="let item of numberOfPages;let i = index">
-            <span (click)="choosePage(i)">
-                {{ i + 1 }}
-            </span>    
-        </li>
         
-<!--
-        <li class="page-item disabled">
-            <span class="page-link">
+        <li class="page-item" [ngClass]="{ 'disabled' : index === 0}">
+            <span class="page-link" (click)="choosePage(0,'')">
                 First
             </span>
         </li>
-        <li class="page-item">
-            <a class="page-link" href="#">
-                1
-            </a>
-        </li>
-        <li class="page-item active">
-            <span class="page-link">
-                2
-                <span class="sr-only">(current)</span>
+        
+        <ng-container *ngFor="let item of pages;let i = index">
+            
+            <li class="page-item"  [ngClass]="{ 'active' : index == item['num'] - 1 }">
+                <span class="page-link "  *ngIf="index == item['num'] - 1">
+                    {{ item['num']  }}
+                </span> 
+            </li>
+            
+            <li class="page-item" >
+                <ng-container *ngIf="item['num'] != '...'">
+                    <span class="page-link "  *ngIf="index != item['num'] - 1" (click)="choosePage(item['num'] - 1, '')">
+                        {{ item['num']  }}
+                    </span>
+                </ng-container>
+                <ng-container *ngIf="item['num'] == '...'">
+                    <span class="page-link "  *ngIf="index != item['num'] - 1 ">
+                        {{ item['num']  }}
+                    </span>
+                </ng-container>    
+            </li>
+            
+        </ng-container>    
+        
+        <li class="page-item" [ngClass]="{ 'disabled' : index === numberOfPages - 1}">
+            <span class="page-link" (click)="choosePage(numberOfPages - 1,'')" >
+                Last
             </span>
         </li>
-        <li class="page-item">
-            <a class="page-link" href="#">
-                3
-            </a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">
-                Last
-            </a>
-        </li>
--->
+
     </ul>
 </nav>
+
+
+
