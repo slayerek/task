@@ -6,13 +6,15 @@ import {ProductsComponent} from './products.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductColComponent } from './product-col/product-col.component';
 import { PaginationComponent } from '../../pagination/pagination.component';
+import { ProductNotFoundComponent } from './product-not-found/product-not-found.component';
 
 @NgModule({
     declarations: [
         ProductsComponent,
         ProductItemComponent,
         ProductColComponent,
-        PaginationComponent
+        PaginationComponent,
+        ProductNotFoundComponent
     ],
     imports: [
         CommonModule,

@@ -11,45 +11,6 @@
     left: 1%;
 }    
 
-.navbar-top .search-form {
-    position: absolute;
-    top: 34%;
-    left: 14%;
-}
-
-.navbar-top .search-form .magnifier {
-    position: absolute;
-    left: 90.56%;
-    right: 4.98%;
-    top: 31.25%;
-    bottom: 32.31%;
-    cursor:pointer
-}
-
-.navbar-top .search-top { 
-    width:392px;
-    height:48px;
-    -webkit-border-radius: 8px 8px 8px 8px;
-    border-radius: 8px 8px 8px 8px;
-    font-size:14px;
-    color: #1A1B1D;
-}
-
-.navbar-top .search-top::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #1A1B1D;
-    opacity: 1; /* Firefox */
-}
-
-.navbar-top .search-top:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #1A1B1D;
-}
-
-.navbar-top .search-top::-ms-input-placeholder { /* Microsoft Edge */
-    color: #1A1B1D;
-}
-
-
-
 .active-container {
     position: absolute;
     left: 51%;

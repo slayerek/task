@@ -1,0 +1,8 @@
+.product_not_found { background:#fff;max-width: 600px;padding:118px 0;margin:5% auto; }
+.product_not_found .prod-svg { display:block;margin:0 auto; }
+.product_not_found h3 { text-align:center;font-family: 'nunitoregular';font-size:18px;color:#1A1B1D;margin-top:15px; }
+.product_not_found p { text-align:center;font-family: 'nunitoregular';font-size:14px;color:#9194A5 }
+
+@media screen and (max-width: 768px) {
+    .product_not_found { width:90%; }
+}    

@@ -1,22 +1,14 @@
 <div class="container product-list-container">
     <div class="row">
         <div class="col-md-12">   
-            <ng-container *ngIf="numberOfPages != undefined">
-                <app-pagination [pages]=
-                    "[
-                        {'num':1,'class':''},
-                        {'num':2,'class':''},
-                        {'num':3,'class':''},
-                        {'num':'...','class':''},
-                        {'num':8,'class':''},
-                        {'num':9,'class':''},
-                        {'num':10,'class':''}
-                    ]" 
-                    [numberOfPages]="numberOfPages.length" 
+            
+                <app-pagination [pages]= "pages" 
+                    [numberOfPages]="numberOfPages"
                     (pageNumber)="choosePage($event)"
+                    [pageIndex]="pageIndex"
                 >
                 </app-pagination>
-            </ng-container>     
+              
         </div>
     </div>
     
@@ -29,7 +21,4 @@
         </div>    
     </div>
     
-    
-        
 </div>
-

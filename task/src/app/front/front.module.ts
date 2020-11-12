@@ -5,17 +5,21 @@ import {FrontRoutingModule} from './front-routing.module';
 import {FrontComponent} from './front.component';
 import {HeaderComponent} from './header/header.component';
 import {ContentComponent} from './content/content.component';
-
+import {SearchComponent} from './search/search.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
         FrontComponent,
         HeaderComponent,
-        ContentComponent
+        ContentComponent,
+        SearchComponent
     ],
     imports: [
         CommonModule,
-        FrontRoutingModule
+        FrontRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class FrontModule {}

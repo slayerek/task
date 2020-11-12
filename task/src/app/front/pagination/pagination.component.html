@@ -2,7 +2,7 @@
     <ul class="pagination justify-content-center">
         
         <li class="page-item" [ngClass]="{ 'disabled' : index === 0}">
-            <span class="page-link" (click)="choosePage(0,'')">
+            <span class="page-link" (click)="choosePage(0)">
                 First
             </span>
         </li>
@@ -18,7 +18,7 @@
             <li class="page-item" >
                 <ng-container *ngIf="item['num'] != '...'">
                     <span class="page-link "  *ngIf="index != item['num'] - 1" (click)="choosePage(item['num'] - 1, '')">
-                        {{ item['num']  }}
+                        {{ item['num']  }} 
                     </span>
                 </ng-container>
                 <ng-container *ngIf="item['num'] == '...'">
@@ -31,13 +31,15 @@
         </ng-container>    
         
         <li class="page-item" [ngClass]="{ 'disabled' : index === numberOfPages - 1}">
-            <span class="page-link" (click)="choosePage(numberOfPages - 1,'')" >
+            <span class="page-link" (click)="choosePage(numberOfPages - 1)" >
                 Last
             </span>
         </li>
 
     </ul>
 </nav>
+
+
 
 
 
