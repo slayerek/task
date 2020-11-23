@@ -10,22 +10,13 @@
         </app-search>    
         
         <div class="form-check form-check-inline active-container">
-            <label class="form-check-label" for="inlineCheckboxActive">
-                <input class="form-check-input" type="checkbox" id="inlineCheckboxActive" >
-                <span class="checkmark">
-                </span>
-                Active    
-            </label>
+            <app-checkbox [id]="'inlineCheckboxActive'" [desc]="'Active'" (type)="check($event)">
+            </app-checkbox>
         </div>
 
         <div class="form-check form-check-inline promo-container">
-            
-            <label class="form-check-label" for="inlineCheckboxPromo">
-                <input class="form-check-input" type="checkbox" id="inlineCheckboxPromo" >
-                <span class="checkmark">
-                </span>    
-                Promo
-            </label>
+            <app-checkbox [id]="'inlineCheckboxPromo'" [desc]="'Promo'" (type)="check($event)">
+            </app-checkbox>
         </div>
 
         <button type="submit" class="btn btn-primary">

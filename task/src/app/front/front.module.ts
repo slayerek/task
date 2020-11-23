@@ -7,13 +7,15 @@ import {HeaderComponent} from './header/header.component';
 import {ContentComponent} from './content/content.component';
 import {SearchComponent} from './search/search.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
     declarations: [
         FrontComponent,
         HeaderComponent,
         ContentComponent,
-        SearchComponent
+        SearchComponent,
+        CheckboxComponent
     ],
     imports: [
         CommonModule,

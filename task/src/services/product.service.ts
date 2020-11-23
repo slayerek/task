@@ -13,9 +13,12 @@ export class ProductService {
     private apiUrl = `${environment.apiDomain}/product`;
     public productsPerPage: number = environment.productsPerPage;
     public productsData = new BehaviorSubject([]);
+    public allProductsData = new BehaviorSubject([]);
     public pageNumber = new BehaviorSubject(-1);
     public numberOfPages = new BehaviorSubject(0);
     public pages = new BehaviorSubject([]);
+    public active = new BehaviorSubject(0);
+    public promo = new BehaviorSubject(0);
 
 
     constructor(private http: HttpClient) {}
@@ -79,7 +82,6 @@ export class ProductService {
 
             x++;
         }
-
 
         this.pages.next(numbersArr);
 

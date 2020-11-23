@@ -25,49 +25,6 @@
 
 }
 
-label {
-    position: relative;
-    padding-left: 9px;
-    padding-top: 2px;
-}
-
-input[type="checkbox"]{
-    opacity:0;
-}
-
-span.checkmark {
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 4px;
-    width: 24px;
-    height: 24px;
-    border: 1px solid #E0E2EA;
-}
-
-input:checked ~ .checkmark {
-    background-color: #4460F7;
-}
-
-input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
 .navbar-top .btn-primary {
     position: absolute;
     right: 1%;

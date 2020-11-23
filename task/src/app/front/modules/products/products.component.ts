@@ -10,9 +10,15 @@ import {Product} from '../../../../models/product.model';
 export class ProductsComponent implements OnInit {
 
     public productsView: Product[] = [];
+    public allProducts: Product[] = [];
+    public activeProductsData: any[] = [];
+    public promoProductsData: any[] = [];
+    public pages: Object = [];
     public numberOfPages: number = 0;
-    public pages;
     public pageIndex: number;
+    public activeProducts: number = 0;
+    public promoProducts: number = 0;
+
 
     constructor(private products: ProductService) {}
 
@@ -30,6 +36,7 @@ export class ProductsComponent implements OnInit {
 
 
 
+                this.products.allProductsData.next(products);//fill products
                 this.products.productsData.next(products);//fill products
 
                 const productsPerPage = this.products.productsPerPage;
@@ -39,6 +46,10 @@ export class ProductsComponent implements OnInit {
 
             }
         );//update products when someone click pagination button
+
+        this.products.allProductsData.subscribe(products => {
+            this.allProducts = products;
+        })
 
         this.products.pages.subscribe(pages => {
             this.pages = pages;
@@ -50,6 +61,9 @@ export class ProductsComponent implements OnInit {
         });
 
         this.updatePaginatedProducts(0);//set products at firts load - need that to pagination
+
+        this.getActivePromoProducts('active');
+        this.getActivePromoProducts('promo');
 
     }
 
@@ -72,6 +86,81 @@ export class ProductsComponent implements OnInit {
 
         });
 
+    }
+
+    private getActivePromoProducts(checkboxType = 'active') {
+        this.products[checkboxType].subscribe(active => {
+
+            let productsFound = [];
+            let allProds = [];
+
+            this.products.pageNumber.next(0);
+
+            if (active == 1) {
+
+                this.products.allProductsData.subscribe(products => {
+                    productsFound = products.filter((item) => {
+                        return item[checkboxType] == 1;
+                    });
+                });
+
+                if (productsFound.length) {
+
+                    allProds = productsFound;
+
+                    if (checkboxType == 'active') {
+
+                        this.activeProducts = 1;
+                        this.activeProductsData = this.activeProductsData.concat(productsFound);
+
+                        if (this.promoProducts) {
+                            allProds = this.activeProductsData.concat(this.promoProductsData);
+                        }
+
+                    } else if (checkboxType == 'promo') {
+
+                        this.promoProducts = 1;
+                        this.promoProductsData = this.promoProductsData.concat(productsFound);
+
+                        if (this.activeProducts) {
+                            allProds = this.promoProductsData.concat(this.activeProductsData);
+                        }
+                    }
+
+
+                }
+
+            } else if (active == 0) {
+
+                if (checkboxType == 'active') {
+
+                    this.activeProducts = 0;
+                    this.activeProductsData.length = 0;
+
+                    if (this.promoProducts) {
+                        allProds = this.activeProductsData.concat(this.promoProductsData);
+                    }
+
+                } else if (checkboxType == 'promo') {
+
+                    this.promoProducts = 0;
+                    this.promoProductsData.length = 0;
+
+                    if (this.activeProducts) {
+                        allProds = this.promoProductsData.concat(this.activeProductsData);
+                    }
+
+                }
+
+                if (allProds.length < 1) {
+                    allProds = this.allProducts;
+                }
+
+            }
+
+            this.products.productsData.next(allProds);
+
+        });
     }
 
 }
